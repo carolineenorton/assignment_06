@@ -1,7 +1,2 @@
-Write your reflection here.
-
-See reflection.md for what makes a good reflection — be specific, use the
-terminology from this assignment (REST API, endpoint, HTTP status code,
-raise_for_status, API key, form data vs. JSON body, rate limit, caching,
-json_normalize, record_path, meta, grain, opinion mining, named-entity
-recognition, prompt, system prompt, reasoning model), and make it actionable.
+This assignment helped me understand how to call a REST API, send form data versus a JSON body, and use raise_for_status() to catch HTTP errors. I also learned how a .env file stores an API key and how caching avoids repeated requests and helps manage the rate limit.
+I struggled most with nested JSON, especially connecting opinion targets to their assessments. Using json_normalize and tracking review_id helped me understand how the tables connect. I also learned to read tracebacks carefully because a test can fail inside another function it calls. I need more practice with nested loops and assessment references, so I plan to trace one review through the pipeline and rewrite that part independently.
