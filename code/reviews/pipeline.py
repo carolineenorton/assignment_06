@@ -104,7 +104,10 @@ def sentences_table(documents: list) -> pd.DataFrame:
     Azure leaves on `sentence_text` with `.str.strip()`.
     """
     sentences = pd.json_normalize(
-        documents, record_path="sentences", meta=["review_id"], record_prefix="sentence_"
+        documents,
+        record_path="sentences",
+        meta=["review_id"],
+        record_prefix="sentence_",
     )
     sentences["sentence_id"] = sentences.groupby("review_id").cumcount()
     sentences = sentences[[
@@ -150,7 +153,9 @@ def opinions_table(documents: list) -> pd.DataFrame:
                         ref = relation["ref"]
                         # Extract the assessment index from the ref string
                         assessment_index = int(ref.split("/")[-1])
-                        assessment_text = sentence["assessments"][assessment_index]["text"]
+                        assessment_text = (
+                            sentence["assessments"][assessment_index]["text"]
+                        )
                         assessments.append(assessment_text)
                 rows.append({
                     "review_id": review_id,
